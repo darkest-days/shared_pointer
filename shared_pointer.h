@@ -18,6 +18,11 @@ public:
         cb = new ControlBlock<T>(pointer);
     }
 
+    template<typename D>
+	shared_pointer(T* pointer, D _deleter){
+        cb = new ControlBlock<T>(pointer, _deleter);
+    }
+
     shared_pointer(shared_pointer &sp)
     {
         cb = sp.cb;
